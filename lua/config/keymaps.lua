@@ -3,3 +3,5 @@
 -- Add any additional keymaps here
 --
 --
+vim.keymap.del("n", "<Leader>l", {})
+vim.keymap.del("n", "<Leader>L", {})

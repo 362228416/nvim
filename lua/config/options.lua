@@ -5,5 +5,5 @@
 
 local opt = vim.opt
 
-opt.wrap = true
+opt.wrap = false
 opt.relativenumber = false

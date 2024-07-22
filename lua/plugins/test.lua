@@ -31,7 +31,6 @@ return {
       neotest.setup({
         log_level = vim.log.levels.TRACE,
         adapters = {
-          --require("neotest-rust"),
           require("neotest-rust")({ args = { "--no-capture" } }),
         },
       })
