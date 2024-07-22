@@ -1,5 +1,6 @@
 -- theme config
 --
+
 return {
   {
     "hardhackerlabs/theme-vim",

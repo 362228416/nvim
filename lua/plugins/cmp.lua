@@ -1,3 +1,15 @@
+if true then
+  return {
+    {
+      "hrsh7th/nvim-cmp",
+      dependencies = { "hrsh7th/cmp-emoji" },
+      ---@param opts cmp.configschema
+      opts = function(_, opts)
+        table.insert(opts.sources, { name = "emoji" })
+      end,
+    },
+  }
+end
 return {
 
   {
