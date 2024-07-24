@@ -52,8 +52,6 @@ return {
         "yaml",
         "rust",
         "dart",
-        "vue",
-        "java",
       },
       incremental_selection = {
         enable = true,

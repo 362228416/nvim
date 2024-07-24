@@ -32,10 +32,7 @@ return {
     "williamboman/mason.nvim",
     opts = function(_, opts)
       if type(opts.ensure_installed) == "table" then
-        vim.list_extend(
-          opts.ensure_installed,
-          { "codelldb", "rust-analyzer", "taplo", "java-debug-adapter", "java-test" }
-        )
+        vim.list_extend(opts.ensure_installed, { "codelldb", "rust-analyzer", "taplo" })
       end
     end,
   },
@@ -56,12 +53,9 @@ return {
           },
         },
         vtsls = {},
-        jdtls = {},
       },
       setup = {
-        jdtls = function(_, opts)
-          return true
-        end,
+
         volar = function(_, opts)
           --table.insert(opts.servers.vtsls.filetypes, "vue")
           -- LazyVim.extend(opts.servers.vtsls, "settings.vtsls.tsserver.globalPlugins", {
