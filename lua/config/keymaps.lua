@@ -3,5 +3,10 @@
 -- Add any additional keymaps here
 --
 --
+--
+local map = vim.keymap.add
+
 vim.keymap.del("n", "<Leader>l", {})
 vim.keymap.del("n", "<Leader>L", {})
+
+-- flutter

@@ -1,4 +1,6 @@
 return {
+  { import = "lazyvim.plugins.extras.lang.typescript" },
+
   { -- extend auto completion
     "hrsh7th/nvim-cmp",
     dependencies = {
@@ -32,7 +34,7 @@ return {
     "williamboman/mason.nvim",
     opts = function(_, opts)
       if type(opts.ensure_installed) == "table" then
-        vim.list_extend(opts.ensure_installed, { "codelldb", "rust-analyzer", "taplo" })
+        vim.list_extend(opts.ensure_installed, { "codelldb", "rust-analyzer", "taplo", "vetur-vls" })
       end
     end,
   },
@@ -55,19 +57,18 @@ return {
         vtsls = {},
       },
       setup = {
-
-        volar = function(_, opts)
-          --table.insert(opts.servers.vtsls.filetypes, "vue")
-          -- LazyVim.extend(opts.servers.vtsls, "settings.vtsls.tsserver.globalPlugins", {
-          --   {
-          --     name = "@vue/typescript-plugin",
-          --     location = LazyVim.get_pkg_path("vue-language-server", "/node_modules/@vue/language-server"),
-          --     languages = { "vue" },
-          --     configNamespace = "typescript",
-          --     enableForWorkspaceTypeScriptVersions = true,
-          --   },
-          -- })
-        end,
+        --volar = function(_, opts)
+        -- table.insert(opts.servers.vtsls.filetypes, "vue")
+        -- vim.extend(opts.servers.vtsls, "settings.vtsls.tsserver.globalPlugins", {
+        --   {
+        --     name = "@vue/typescript-plugin",
+        --     location = LazyVim.get_pkg_path("vue-language-server", "/node_modules/@vue/language-server"),
+        --     languages = { "vue" },
+        --     configNamespace = "typescript",
+        --     enableForWorkspaceTypeScriptVersions = true,
+        --   },
+        -- })
+        --end,
         rust_analyzer = function(_, opts)
           require("lazyvim.util").lsp.on_attach(function(client, buffer)
           -- stylua: ignore
